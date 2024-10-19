@@ -13,8 +13,7 @@ import java.util.stream.Collectors;
 /* Find First occurance in java 
  * input : babababssa
  * output : b
- * 
- * */
+ * * */
 
 
 public class FirstRepeatNonRepeatNOccurStringCharacter {
