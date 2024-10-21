@@ -1,6 +1,5 @@
-package in.sunil.codejava8;
+package in.sunil.integer.codejava8;
 import java.util.Arrays;
-
 import java.util.HashSet;
 import java.util.List;
 import java.util.stream.Collectors;

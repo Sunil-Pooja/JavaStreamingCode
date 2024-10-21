@@ -1,4 +1,4 @@
-package in.sunil.codejava8;
+package in.sunil.integer.codejava8;
 
 import java.util.Arrays;
 import java.util.Comparator;

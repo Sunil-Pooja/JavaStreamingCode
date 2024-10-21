@@ -21,7 +21,7 @@ public class FirstRepeatNonRepeatNOccurStringCharacter {
 	
 	public static void main(String[] args) {
 		
-		//First APproach
+		//First Approach
 
 		//String.chars() will give -IntStream
 		//set.add() will return false if element is already in the set
@@ -53,20 +53,9 @@ public class FirstRepeatNonRepeatNOccurStringCharacter {
 		if(firstNonRepeat.isPresent()) {
 			System.out.println("First non repeating:" + firstNonRepeat.get());
 		}
-		
-		/*
-		 * String input = "stackoverflow"; Character nonRepeatChar =
-		 * input.chars().mapToObj(c -> Character.valueOf((char) c))
-		 * .collect(Collectors.groupingBy(Function.identity(), Collectors.counting()))
-		 * // Finding the character count
-		 * .entrySet().stream().sorted(Map.Entry.comparingByValue()) //Sorted by
-		 * character count value .map(entry -> entry.getKey()).findFirst().get();
-		 * //Returning the first value
-		 */		
-		
 		//First repeating
 		//2nd Approach
-		Optional<Character> firstRepeat = collect.entrySet().stream().filter( (e) -> e.getValue() > 1).map(e -> e.getKey()).findFirst();
+		Optional<Character> firstRepeat =  "abcsdnvs".chars().mapToObj(i -> (char)i).collect(Collectors.groupingBy(Function.identity(), LinkedHashMap::new, Collectors.counting())).entrySet().stream().filter( (e) -> e.getValue() > 1).map(e -> e.getKey()).findFirst();
 		System.out.println("First repeating:" + firstRepeat.orElse(null));
 		
 		

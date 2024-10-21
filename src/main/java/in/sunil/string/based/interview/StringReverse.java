@@ -2,12 +2,6 @@ package in.sunil.string.based.interview;
 
 import java.util.Arrays;
 import java.util.stream.Collectors;
-// Question -1 Reverse String First to Last place changing place 
-// QUestion -2 Reverse String reverse without place change using stream 	
-/* Question 3
- * input-   "This is an interview question" 
- * output - "question interview an is this"
- */				
 
 public class StringReverse {
 	public static void main(String[] args){
@@ -15,21 +9,32 @@ public class StringReverse {
 		String str="SUNIL KUMAR RAM";
 		StringBuilder builder=new StringBuilder(str).reverse();
 		System.out.println(builder);//MAR RAMUk LINUS
-
+		
+		//QUestion 2
 		String reverseNew=Arrays.stream(str.split(" ")).map(str1->new StringBuilder(str1).reverse()).collect(Collectors.joining(""));
-		System.out.println("reverseNew!!"+reverseNew);//LINUS RAMUK MAR
+		System.out.println("reNew!!"+reverseNew);//LINUS RAMUK MAR
+		//Other interview question 
 		
-		
-		String[] words =  "This is interview question".split(" ");
+		//Question 3 
+		/* Input:  This is an interview question
+		 * output: This is an inteview noitseuq
+		 *  
+		 *  */
+		String[] words =  "This is a test sentence".split(" ");
 		String rev = "";
-		for(int i = words.length - 1; i >= 0 ; i--)
+		StringBuilder buil=null;
+		for(int i = words.length-1; i >= 0 ; i--)
 		{
-			rev += words[i] + " ";
+			if(words[i].equalsIgnoreCase("sentence")) {
+			    builder=new StringBuilder("sentence").reverse();
+			    rev += builder + " ";
+			}else {
+				System.out.println("Dummy "+words[i]);
+				rev = words[i] + " "+rev;
+			}
 		}
 		System.out.println(rev+" Rev ");
-		// rev = "question interview is This "
-
-		// can also use StringBuilder:
+		//Question 4 approach
 		StringBuilder revb = new StringBuilder();
 		for(int i = words.length - 1; i >= 0 ; i--)
 		{
